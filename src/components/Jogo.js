@@ -1,7 +1,12 @@
-import React, { useState } from "react";
-import palavras from "./palavras";
-
-export default function Jogo({erro, setErro, palavraLetras, setPalavraLetras, setPalavraEscolhida}) {
+export default function Jogo(
+    {
+        erro,
+        palavraLetras,
+        setPalavraEscolhida,
+        estadoBotao,
+        palavraFinal
+    }
+) {
     /*renderização da forca, botão de escolher palavra & a palavra em si*/
 
     return (
@@ -12,12 +17,16 @@ export default function Jogo({erro, setErro, palavraLetras, setPalavraLetras, se
                 <div className="forca">
                     <img src={`/assets/forca${erro}.png`} />
                 </div>
-                <button onClick={setPalavraEscolhida} className="botao">
+                <button
+                    onClick={setPalavraEscolhida}
+                    disabled={estadoBotao}
+                    className="botao"
+                >
                     Escolher Palavra
                 </button>
-                
+
                 <div className="palavra">
-                    {palavraLetras}
+                    <span>{palavraLetras}</span>
                 </div>
 
             </div>

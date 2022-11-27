@@ -18,17 +18,15 @@ img {
     width: 60%;
 }
 
-button {
+.botao {
     border: none;
     border-radius: 8px;
     background-color: #27AE60;
     color: #fffefe;
     font-weight: 600;
-}
-
-.botao {
+    font-size: 15px;
     margin: 90px 50px;
-    width: 150px;
+    width: 160px;
     height: 45px;
 }
 
@@ -38,6 +36,14 @@ button {
     right: 8%;
     font-size: 40px;
     font-weight: 600;
+}
+
+.errada {
+    color: red;
+}
+
+.certa {
+    color: green;
 }
 
 .letras {
@@ -50,19 +56,20 @@ button {
     height: 10%;
 }
 
-.letra {
-    border: 2px solid #7ba6c7;
+.desativado {
     color: #7e8fa0;
     background-color: #9eabb5;
+}
+
+.letra {
+    border: 2px solid #7ba6c7;
+    border-radius: 3px;
+    color: #39739d;
+    background-color: #e0ecf5;
     margin: 8px 8px 0 0;
     width: 42px;
     height: 42px;
     font-size: 18px;
-}
-
-.ativado {
-    background-color: #e0ecf5;
-    color: #39739d;
 }
 
 .chute {
