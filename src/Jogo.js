@@ -1,12 +1,19 @@
 import React, { useState } from "react";
+import palavras from "./palavras";
 
 export default function Jogo() {
     /*renderização da forca, botão de escolher palavra & a palavra em si*/
-    const jogo = [
-        { forca: "assets/forca0.png" }
-    ]
 
-    const [forcaState, setforcaState] = useState('./assets/forca0.png')
+    const [count, setCount] = useState(0)
+    const [palavraLetras, setPalavraLetras] = useState([]);
+
+    function setPalavraEscolhida() {
+        const escolherPalavra = palavras[Math.floor(Math.random() * palavras.length)];
+
+        const novaPalavra = [...escolherPalavra];
+        setPalavraLetras(novaPalavra)
+        console.log(palavraLetras)
+    }
 
     return (
         <div className="jogo">
@@ -14,16 +21,16 @@ export default function Jogo() {
             <div className="topo">
 
                 <div className="forca">
-                    <img src={forcaState} />
+                    <img src={`/assets/forca${count}.png`} />
                 </div>
-                <button className="botao-inicio">
+                <button onClick={setPalavraEscolhida} className="botao-inicio">
                     Escolher Palavra
                 </button>
 
-            </div>
+                <div className="palavra">
+                    {palavraLetras}
+                </div>
 
-            <div className="palavra">
-                _ _ _ _ _ _ _ _ _ _
             </div>
 
         </div>

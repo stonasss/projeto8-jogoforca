@@ -4,7 +4,7 @@ export default function Letras() {
 
     return (
         <div className="letras">
-            {alfabeto.map((letra) => <button key={alfabeto} className="letra">{letra}</button>)}
+            {alfabeto.map((letra) => <button key={letra} className="letra">{letra}</button>)}
         </div>
     )
 }
