@@ -4,14 +4,19 @@ import palavras from "./palavras";
 export default function Jogo() {
     /*renderização da forca, botão de escolher palavra & a palavra em si*/
 
-    const [count, setCount] = useState(0)
+    const [erro, setErro] = useState(0)
     const [palavraLetras, setPalavraLetras] = useState([]);
 
     function setPalavraEscolhida() {
         const escolherPalavra = palavras[Math.floor(Math.random() * palavras.length)];
-
+        console.log(escolherPalavra)
         const novaPalavra = [...escolherPalavra];
-        setPalavraLetras(novaPalavra)
+        let espacos = [];
+
+        novaPalavra.forEach(() => {espacos.push(" _")})
+
+        setPalavraLetras(espacos)
+
         console.log(palavraLetras)
     }
 
@@ -21,12 +26,12 @@ export default function Jogo() {
             <div className="topo">
 
                 <div className="forca">
-                    <img src={`/assets/forca${count}.png`} />
+                    <img src={`/assets/forca${erro}.png`} />
                 </div>
                 <button onClick={setPalavraEscolhida} className="botao-inicio">
                     Escolher Palavra
                 </button>
-
+                
                 <div className="palavra">
                     {palavraLetras}
                 </div>
