@@ -26,7 +26,7 @@ button {
     font-weight: 600;
 }
 
-.botao-inicio {
+.botao {
     margin: 90px 50px;
     width: 150px;
     height: 45px;
@@ -58,6 +58,11 @@ button {
     width: 42px;
     height: 42px;
     font-size: 18px;
+}
+
+.ativado {
+    background-color: #e0ecf5;
+    color: #39739d;
 }
 
 .chute {
