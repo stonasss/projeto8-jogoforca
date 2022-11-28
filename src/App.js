@@ -85,6 +85,7 @@ export default function App() {
         novaPalavra={novaPalavra}
         estadoVisual={estadoVisual}
         setEstadoVisual={setEstadoVisual}
+        setEstadoInput={setEstadoInput}
       />
       <Chute
         chuteInput={chuteInput}

@@ -13,7 +13,8 @@ export default function Letras(
         setArrayLetras,
         setEstadoCor,
         estadoVisual,
-        setEstadoVisual
+        setEstadoVisual,
+        setEstadoInput
     }
 ) {
 
@@ -45,11 +46,13 @@ export default function Letras(
             setEstadoTecla(true)
             setEstadoBotao(false)
             setEstadoVisual("desativado")
+            setEstadoInput(true)
         } else if (palavraJogo.toString() === palavraLetras.toString()) {
             setEstadoCor("certa")
             setEstadoTecla(true)
             setEstadoBotao(false)
             setEstadoVisual("desativado")
+            setEstadoInput(true)
         }
 
         console.log(letra)
