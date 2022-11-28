@@ -8,6 +8,7 @@ export default function Jogo(
     }
 ) {
 
+    /*renderiza a imagem da forca, o botão de escolher a palavra e o campo da palavra*/
     return (
         <div className="jogo">
             <div className="topo">

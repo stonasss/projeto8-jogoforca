@@ -32,18 +32,26 @@ export default function App() {
     setChuteInput("")
     setEstadoVisual("ativado")
 
+    /*embaralha a array de palavras e insere numa variável*/
     const escolherPalavra = palavras[Math.floor(Math.random() * palavras.length)];
 
+    /*código para inserção de data-answer*/
     setPalavra(escolherPalavra)
+
     setPalavraJogo([...escolherPalavra])
 
+    /*coloca cada uma das letras da palavra escolhida como uma index numa array*/
     const novaPalavra = [...escolherPalavra];
 
+    /*cria a variável que vai receber essas letras e trocar por _*/
     let espacos = [];
 
+    /*código que transforma as letras em _*/
     novaPalavra.forEach(() => { espacos.push(" _") })
 
     setPalavraLetras(espacos)
+
+    /*acende o teclado de letras*/
     setEstadoTeclado("letra")
   }
 
@@ -58,31 +66,21 @@ export default function App() {
         palavra={palavra}
       />
       <Letras
-        estadoTeclado={estadoTeclado}
-        setEstadoTeclado={setEstadoTeclado}
         letraClicada={letraClicada}
-        setLetraClicada={setLetraClicada}
         palavraJogo={palavraJogo}
-        setPalavraJogo={setPalavraJogo}
         palavraLetras={palavraLetras}
         setPalavraLetras={setPalavraLetras}
         erro={erro}
         setErro={setErro}
-        estadoBotao={estadoBotao}
-        setEstadoBotao={setEstadoBotao}
         estadoTecla={estadoTecla}
         setEstadoTecla={setEstadoTecla}
-        palavraFinal={palavraFinal}
-        setPalavraFinal={setPalavraFinal}
         arrayLetras={arrayLetras}
         setArrayLetras={setArrayLetras}
-        escolherPalavra={escolherPalavra}
-        estadoCor={estadoCor}
         setEstadoCor={setEstadoCor}
-        novaPalavra={novaPalavra}
         estadoVisual={estadoVisual}
         setEstadoVisual={setEstadoVisual}
         setEstadoInput={setEstadoInput}
+        setEstadoBotao={setEstadoBotao}
       />
       <Chute
         chuteInput={chuteInput}

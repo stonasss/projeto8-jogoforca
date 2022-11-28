@@ -23,21 +23,25 @@ export default function Letras(
     const novaPuzzleString = novaPuzzle.join("")
 
     function estadoLetra(letra) {
-
         setArrayLetras([...arrayLetras, letra])
         letraClicada.push(letra)
-        console.log(palavraJogo)
 
+        /*condição aplicada quando a letra clicada estiver na palavra escolhida*/
         if (palavraJogo.includes(letra)) {
+            /*percorre a array das letras da palavra escolhida*/
             for (let i = 0; i < palavraJogo.length; i++) {
+                /*condição onde determina se a letra clicada está na array da palavra de letras*/
                 if (palavraJogo[i] === letra) {
+                    /*substitui os underlines da palavra pela letra clicada*/
                     palavraLetras[i] = letra
                 }
             }
         } else if (erro < 6 && !palavraJogo.includes(letra)) {
+            /*quando a letra clicada não estiver na array de letras, adiciona 1 erro e altera a imagem da forca*/
             setErro(erro + 1)
         }
 
+        /*condição que determina resultado do jogo*/
         if (erro === 5) {
             setPalavraLetras(novaPuzzleString)
             setEstadoCor("errada")
@@ -54,6 +58,7 @@ export default function Letras(
         }
     }
 
+    /*renderiza todos os botões das letras*/
     return (
         <div className="letras">
             {alfabeto.map((letra) => (
@@ -66,7 +71,7 @@ export default function Letras(
                     data-test="letter"
                 >
                     <span>
-                        {letra}
+                        {letra.toUpperCase()}
                     </span>
                 </button>
             ))}

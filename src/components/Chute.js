@@ -15,6 +15,7 @@ export default function Chute(
 ) {
 
     function chutarResposta() {
+
         if (chuteInput === palavraJogo.join("")) {
             setPalavraLetras(palavraJogo)
             setEstadoCor("certa")
@@ -33,6 +34,7 @@ export default function Chute(
         }
     }
 
+    /*renderiza o input e o botão de advinhar no fundo da página*/
     return (
         <div className="chute">
             Já sei a palavra!
