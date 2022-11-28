@@ -41,13 +41,18 @@ export default function Chute(
                 value={chuteInput}
                 disabled={estadoInput}
                 onChange={e => setChuteInput(e.target.value)}
+                data-test="guess-input"
             >
 
             </input>
             <button
                 onClick={chutarResposta}
                 disabled={estadoInput}
-            >Chutar</button>
+                data-test="guess-button"
+            >
+                Chutar
+            </button>
+
         </div>
     )
 }

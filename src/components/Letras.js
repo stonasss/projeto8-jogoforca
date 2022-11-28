@@ -23,6 +23,7 @@ export default function Letras(
     const novaPuzzleString = novaPuzzle.join("")
 
     function estadoLetra(letra) {
+
         setArrayLetras([...arrayLetras, letra])
         letraClicada.push(letra)
         console.log(palavraJogo)
@@ -31,9 +32,6 @@ export default function Letras(
             for (let i = 0; i < palavraJogo.length; i++) {
                 if (palavraJogo[i] === letra) {
                     palavraLetras[i] = letra
-
-                    console.log(letraClicada)
-                    console.log(palavraLetras)
                 }
             }
         } else if (erro < 6 && !palavraJogo.includes(letra)) {
@@ -54,8 +52,6 @@ export default function Letras(
             setEstadoVisual("desativado")
             setEstadoInput(true)
         }
-
-        console.log(letra)
     }
 
     return (
@@ -67,6 +63,7 @@ export default function Letras(
                     id={letra}
                     className={`letra ${letraClicada.includes(letra) ? "desativado" : estadoVisual}`}
                     onClick={() => estadoLetra(letra)}
+                    data-test="letter"
                 >
                     <span>
                         {letra}

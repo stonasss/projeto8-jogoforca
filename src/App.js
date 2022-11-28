@@ -9,15 +9,16 @@ export default function App() {
   const [palavraLetras, setPalavraLetras] = useState([]);
   const [palavraJogo, setPalavraJogo] = useState([]);
   const [letraClicada, setLetraClicada] = useState([]);
+  const [arrayLetras, setArrayLetras] = useState([]);
   const [estadoTeclado, setEstadoTeclado] = useState("desativado");
+  const [estadoVisual, setEstadoVisual] = useState("desativado")
   const [estadoTecla, setEstadoTecla] = useState(true);
   const [estadoBotao, setEstadoBotao] = useState(false);
   const [estadoInput, setEstadoInput] = useState(true)
   const [palavraFinal, setPalavraFinal] = useState("");
-  const [arrayLetras, setArrayLetras] = useState([]);
   const [estadoCor, setEstadoCor] = useState("")
   const [chuteInput, setChuteInput] = useState("")
-  const [estadoVisual, setEstadoVisual] = useState("desativado")
+  const [palavra, setPalavra] = useState("")
   const escolherPalavra = ''
   const novaPalavra = []
 
@@ -32,16 +33,17 @@ export default function App() {
     setEstadoVisual("ativado")
 
     const escolherPalavra = palavras[Math.floor(Math.random() * palavras.length)];
+
+    setPalavra(escolherPalavra)
     setPalavraJogo([...escolherPalavra])
+
     const novaPalavra = [...escolherPalavra];
 
-    console.log(novaPalavra)
     let espacos = [];
 
     novaPalavra.forEach(() => { espacos.push(" _") })
 
     setPalavraLetras(espacos)
-    console.log(espacos)
     setEstadoTeclado("letra")
   }
 
@@ -50,15 +52,10 @@ export default function App() {
     <>
       <Jogo
         erro={erro}
-        setErro={setErro}
         palavraLetras={palavraLetras}
-        setPalavraLetras={setPalavraLetras}
-        estadoBotao={estadoBotao}
-        setEstadoBotao={setEstadoBotao}
         estadoCor={estadoCor}
-        palavraFinal={palavraFinal}
-        setPalavraFinal={setPalavraFinal}
         setPalavraEscolhida={setPalavraEscolhida}
+        palavra={palavra}
       />
       <Letras
         estadoTeclado={estadoTeclado}
