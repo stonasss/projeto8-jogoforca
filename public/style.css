@@ -56,16 +56,19 @@ img {
     height: 10%;
 }
 
-.desativado {
+.letra.desativado {
     color: #7e8fa0;
     background-color: #9eabb5;
+}
+
+.letra.ativado {
+    color: #39739d;
+    background-color: #e0ecf5;
 }
 
 .letra {
     border: 2px solid #7ba6c7;
     border-radius: 3px;
-    color: #39739d;
-    background-color: #e0ecf5;
     margin: 8px 8px 0 0;
     width: 42px;
     height: 42px;

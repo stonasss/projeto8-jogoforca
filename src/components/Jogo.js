@@ -3,11 +3,9 @@ export default function Jogo(
         erro,
         palavraLetras,
         setPalavraEscolhida,
-        estadoBotao,
-        palavraFinal
+        estadoCor
     }
 ) {
-    /*renderização da forca, botão de escolher palavra & a palavra em si*/
 
     return (
         <div className="jogo">
@@ -19,13 +17,12 @@ export default function Jogo(
                 </div>
                 <button
                     onClick={setPalavraEscolhida}
-                    disabled={estadoBotao}
                     className="botao"
                 >
                     Escolher Palavra
                 </button>
 
-                <div className="palavra">
+                <div className={`palavra ${estadoCor}`}>
                     <span>{palavraLetras}</span>
                 </div>
 
